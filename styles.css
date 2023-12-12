@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Edu QLD Beginner', cursive;
+    box-sizing: border-box
+}
+
+.WebContainer{
+    width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 400px){
+    .environment-art-gallery{
+        width: 75%;
+        height: 42%;
+    }
+
+}
+
+body{
+    background: #c2e2cd;
+}
+
+.environment-art-gallery{
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10%;
+    margin: 115px auto 0;
+    overflow-x: scroll;
+    display: flex;
+}
+
+.environment-art-gallery div{
+    width: 100%;
+    height: 56.25%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+    flex: none;
+}
+
+.environment-art-gallery::-webkit-scrollbar{
+    display:none;
+}
+
+.environment-art-gallery div img{
+    width: 95%;
+    /*
+    filter: grayscale(100%);
+    transition: transform 0.2s;
+    */
+}
+/* .environment-art-gallery div img:hover{
+    filter: grayscale(0);
+    cursor: pointer;
+    transform: scale(1.1);
+} */
+
+.environment-art-gallery-wrap{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    margin: auto auto;
+}
+
+#backBtn, #nextBtn{
+    align-items:center;
+    width: 10%;
+    height: 10%;
+    margin: 1%;
+}

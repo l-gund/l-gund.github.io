@@ -3,9 +3,55 @@
 	<meta charset="UTF-8">
 	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel="stylesheet" href="styles.css" />
 	<title> Lillianna Gund </title>
 </head>
 <body>
-Hello World.
+	Hello World.
+	<div class="environment-art-gallery-wrap">
+		<header>
+			<h2 class="section-title">Environmental and Background Art</h2>
+		</header>
+		<img src="images/back_btn.png" id="backbtn">
+		
+		<div class="environment-art-gallery">
+			<div>
+				<span><img src="images/lakeside.png" title="lakeside (procreate)"></span>
+			</div>
+			<div>
+				<span><img src="images/wilderness.png" title="Wilderness (Adobe Illustrator)"></span>
+			</div>
+			<div>
+				<span><img src="images/airport.png" title="Airport (Adobe Illustrator)"></span>
+			</div>
+			<div>
+				<span><img src="images/cabin.png" title="Cabin (Adobe Illustrator)"></span>
+			</div>
+		</div>
+
+		<img src="images/fwd_btn.png" id="'fwdbtn">
+
+	</div>
+
+	<script>
+		let scrollContainer = document.querySelector(".environment-art-gallery");
+		let backBtn = document.getElementById("backbtn");
+		let fwdBtn = document.getElementById("fwdbtn");
+
+		scrollContainer.addEventListener("wheel",(evt) => {
+			evt.preventDefault();
+			scrollContainer.scrollLeft += evt.deltaY;
+			scrollContainer.style.scrollBehavior = "auto";
+		});
+
+		fwdBtn.addEventListener("click",()=> {
+			scrollContainer.style.scrollBehavior = "smooth";
+			scrollContainer.scrollLeft += scrollContainer.clientWidth;
+		})
+		backBtn.addEventListener("click",()=> {
+			scrollContainer.style.scrollBehavior = "smooth";
+			scrollContainer.scrollLeft -= scrollContainer.clientWidth;
+		})
+	</script>
 </body>
 </html>
