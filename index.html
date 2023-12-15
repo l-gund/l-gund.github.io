@@ -7,32 +7,98 @@
 	<title> Lillianna Gund </title>
 </head>
 <body>
-	Hello World.
-	<div class="environment-art-gallery-wrap">
-		<header>
-			<h2 class="section-title">Environmental and Background Art</h2>
-		</header>
-		<img src="images/back_btn.png" id="backbtn">
-		
-		<div class="environment-art-gallery">
-			<div>
-				<span><img src="images/lakeside.png" title="lakeside (procreate)"></span>
-			</div>
-			<div>
-				<span><img src="images/wilderness.png" title="Wilderness (Adobe Illustrator)"></span>
-			</div>
-			<div>
-				<span><img src="images/airport.png" title="Airport (Adobe Illustrator)"></span>
-			</div>
-			<div>
-				<span><img src="images/cabin.png" title="Cabin (Adobe Illustrator)"></span>
-			</div>
-		</div>
+	<!-- Nav -->
+	<nav id="nav">
+		<ul class="container">
+				<li><a href="#introduction">Introduction</a></li>
+				<li><a href="#csProjects">Computer Science Projects</a></li>
+				<li><a href="#artPortfolio">Art Portfolio</a></li>
+				<li><a href="#contact">Contact</a></li>
+		</ul>
+	</nav>
 
-		<img src="images/fwd_btn.png" id="fwdbtn">
-
+	<div class="profile-buttons">
+		<button onclick="showProfile('profile-computer-science')">Computer Science Profile</button>
+		<button onclick="showProfile('profile-art')">Art Profile</button>
 	</div>
 
+	<script>
+		function showProfile(profile) {
+			// Hide all profiles
+			document.getElementById('profile-computer-science').style.display = 'none';
+			document.getElementById('profile-art').style.display = 'none';
+
+			document.getElementById(profile).style.display = 'block';
+		}
+	</script>
+	
+	<article id="profile-computer-science" class="profile-container">
+		<div id="profile">
+			<div class="profile-image">
+				<img src="images/profile-pic.jpg" width="250" height="250"/>
+			</div>
+			<div class="profile-text">
+				<p>
+					I am dynamic and forward-thinking software engineer with a passion for innovation and problem-solving. <br>
+					I have a passion for learning, evident by ability to embrace technical challenges, and ability to grasp new concepts quickly. I have a solid foundation in data structures, machine learning, and the development life cycle. I'm excited about the potential of AI applications and large-scale ML models which can push the boundaries of what is achievable with technology.
+					<br>
+					In addition to my technical skills, I'm proficient in Mandarin and have a basic understanding in Japanese. This reflects my committment to embrace diversity and global perspectives. 
+					<br>
+					Effective communication is paramount in my professional approach. I strive to bridge the gap between between non-technical team members by explaining technical processes in a way that is non-patronizing and easy to understand.
+				</p>
+			</div>
+		</div>
+	</article>
+
+	<article id="profile-art" class="profile-container" style="display: none">
+		<div id="profile">
+			<div class="profile-image">
+				<img src="images/Me.png" width="250" height="250"/>
+			</div>
+			<div class="profile-text">
+				<p>
+					I've been drawing my whole life and am primarily self-taught. 
+					<br>
+ 					I took up digital arts and graphic design in 2015. I've been creating commissions for over 2 year, consisting of anime-style digital drawings and stylized vector background art.  My primary tools are "Procreate", "Clip Studio Paint", "Photoshop", and "Adobe Illustrator".
+					<br>
+					I'm always looking to improve, and expand my artist toolbox.
+					<br>
+					I have an everlasting interest in video-making and animation and have become well versed in "Premiere Pro", "Adobe After Effects", "Clip Studio Paint EX", and am currently learning "Procreate Dream".
+				</p>
+				<div style="clear:both;"></div>
+			</div>
+		</div>
+	</article>
+
+	<article id="artPortfolio">
+		<div class="environment-art-gallery-wrap">
+			<header>
+				<h2 class="section-title">Environmental and Background Art</h2>
+			</header>
+			
+			<img src="images/back_btn.png" id="backbtn">
+			
+			<div class="environment-art-gallery">
+				<div>
+					<span><img src="images/lakeside.png" title="lakeside (procreate)"></span>
+				</div>
+				<div>
+					<span><img src="images/wilderness.png" title="Wilderness (Adobe Illustrator)"></span>
+				</div>
+				<div>
+					<span><img src="images/airport.png" title="Airport (Adobe Illustrator)"></span>
+				</div>
+				<div>
+					<span><img src="images/cabin.png" title="Cabin (Adobe Illustrator)"></span>
+				</div>
+			</div>
+
+			<img src="images/fwd_btn.png" id="fwdbtn">
+
+		</div>
+	</article>
+
+	<!-- Image switching for environment art -->
 	<script>
 		let scrollContainer = document.querySelector(".environment-art-gallery");
 		let backBtn = document.getElementById("backbtn");
@@ -64,5 +130,15 @@
         	}
 		});
 	</script>
+
+	<div class="social-icons">
+		<a href="https://www.linkedin.com/in/lgund/" target="_blank" rel="noopener noreferrer">
+			<img src="linkedin-icon.png" alt="LinkedIn">
+		</a>
+		<a href="https://github.com/l-gund" target="_blank" rel="noopener noreferrer">
+			<img src="github-icon.png" alt="GitHub">
+		</a>
+	</div>
+
 </body>
 </html>
