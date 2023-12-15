@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Edu QLD Beginner', cursive;
+    font-style: normal;
     box-sizing: border-box
 }
 
@@ -28,36 +29,34 @@ body{
     max-width: 90%;
     max-height: 90%;
     border-radius: 10%;
-    margin: 115px auto 0;
+    margin: 1% auto 0;
     overflow-x: scroll;
     display: flex;
+    scroll-snap-type: x mandatory; 
 }
 
 .environment-art-gallery div{
-    width: 100%;
-    height: 56.25%;
-    display: grid;
-    grid-template-columns: auto auto auto;
-
-    flex: none;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 100%; /* Take up 100% width, no shrinking or growing */
+    scroll-snap-align: center; /* Snap the center of each image to the container */
 }
+
 
 .environment-art-gallery::-webkit-scrollbar{
     display:none;
 }
 
-.environment-art-gallery div img{
-    width: 95%;
-    /*
-    filter: grayscale(100%);
-    transition: transform 0.2s;
-    */
+.environment-art-gallery div img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+    margin: auto;
 }
-/* .environment-art-gallery div img:hover{
-    filter: grayscale(0);
-    cursor: pointer;
-    transform: scale(1.1);
-} */
 
 .environment-art-gallery-wrap{
     display: flex;

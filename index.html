@@ -29,7 +29,7 @@
 			</div>
 		</div>
 
-		<img src="images/fwd_btn.png" id="'fwdbtn">
+		<img src="images/fwd_btn.png" id="fwdbtn">
 
 	</div>
 
@@ -37,21 +37,32 @@
 		let scrollContainer = document.querySelector(".environment-art-gallery");
 		let backBtn = document.getElementById("backbtn");
 		let fwdBtn = document.getElementById("fwdbtn");
-
+	
 		scrollContainer.addEventListener("wheel",(evt) => {
 			evt.preventDefault();
 			scrollContainer.scrollLeft += evt.deltaY;
 			scrollContainer.style.scrollBehavior = "auto";
 		});
-
+	
 		fwdBtn.addEventListener("click",()=> {
 			scrollContainer.style.scrollBehavior = "smooth";
 			scrollContainer.scrollLeft += scrollContainer.clientWidth;
-		})
+	
+			// Check if reached the end, and loop back to the beginning
+			if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
+				scrollContainer.scrollLeft = 0;
+			}
+		});
+	
 		backBtn.addEventListener("click",()=> {
 			scrollContainer.style.scrollBehavior = "smooth";
 			scrollContainer.scrollLeft -= scrollContainer.clientWidth;
-		})
+
+			        // Check if reached the beginning, and loop to the last image
+			if (scrollContainer.scrollLeft <= 0) {
+            	scrollContainer.scrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+        	}
+		});
 	</script>
 </body>
 </html>
