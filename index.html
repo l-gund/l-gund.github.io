@@ -10,27 +10,12 @@
 	<!-- Nav -->
 	<nav id="nav">
 		<ul class="container">
-				<li><a href="#introduction">Introduction</a></li>
+				<li><a href="#profile">Introduction</a></li>
 				<li><a href="#csProjects">Computer Science Projects</a></li>
 				<li><a href="#artPortfolio">Art Portfolio</a></li>
 				<li><a href="#contact">Contact</a></li>
 		</ul>
 	</nav>
-
-	<div class="profile-buttons">
-		<button onclick="showProfile('profile-computer-science')">Computer Science Profile</button>
-		<button onclick="showProfile('profile-art')">Art Profile</button>
-	</div>
-
-	<script>
-		function showProfile(profile) {
-			// Hide all profiles
-			document.getElementById('profile-computer-science').style.display = 'none';
-			document.getElementById('profile-art').style.display = 'none';
-
-			document.getElementById(profile).style.display = 'block';
-		}
-	</script>
 	
 	<article id="profile-computer-science" class="profile-container">
 		<div id="profile">
@@ -70,11 +55,79 @@
 		</div>
 	</article>
 
+	<div class="profile-buttons">
+		<button onclick="showProfile('profile-computer-science')">Computer Science Profile</button>
+		<button onclick="showProfile('profile-art')">Art Profile</button>
+	</div>
+
+	<script>
+		function showProfile(profile) {
+			// Hide all profiles
+			document.getElementById('profile-computer-science').style.display = 'none';
+			document.getElementById('profile-art').style.display = 'none';
+
+			document.getElementById(profile).style.display = 'block';
+		}
+	</script>
+
+	<article id="cs-classes" class="class-list" style="display: none">
+		<ul>
+			<li>MATH1342: Calculus 2 for Science/Engineering</li>
+			<li>MATH1365: Intro to Math Reasoning</li>
+
+			<li>CS1800: Discrete Structures</li>
+			<li>CS2500: Fundamentals of Computer Science 1</li>
+			<li>CS2510: Fundamentals of Computer Science 2 (accelerated)</li>
+			<li>CS2810: Mathematics of Data Models</li>
+			<li>CS3500: Object-Oriented Design</li>
+			<li>CS3650: Computer Systems</li>
+			<li>CS3800: Theory of Computation</li>
+			<li>CS4500: Software Development</li>
+			<li>CS5800: Algorithms (graduate level equivalent of CS3000: Algorithms and Data)</li>
+			
+			<li>DS3000: Foundations of Data Science</li>
+			<li>DS4400: Machine Learning/Data Mining 1</li>
+			<li>CS4100: Artificial Intelligence</li>
+			<li>CS4120: Natural Language Processing</li>
+
+			<li>CY2550: Foundations of Cybersecurity</li>
+		</ul>
+	</article>
+
+	<article id="art-classes" class="class-list" >
+		<ul>
+			<li>ARTF1120: Observational Drawing</li>
+			<li>ARTF1121: Conceptual Drawing</li>
+			<li>ARTF1122: Color and Composition</li>
+			<li>ARTF1123: Color and Composition Tools</li>
+			<li>ARTF2220: Movement and Time</li>
+			<li>ARTF2221: Movement and Time Tools</li>
+			<li>ARTD2370: Animation Basics</li>
+		</ul>
+
+	</article>
+
 	<article id="artPortfolio">
-		<div class="environment-art-gallery-wrap">
-			<header>
-				<h2 class="section-title">Environmental and Background Art</h2>
-			</header>
+		<div class="graphic-design-gallery">
+			<div>
+				<span><img src="images/dinosaur_art_player_pad.png" ></span>
+				<span><img src="images/Happy_Bees_2.png" style="height:500px"></span>
+			</div>
+
+			<div class="dinosaur-posters">
+					<div>
+						<img src="images/triceratops poster.png" style="width:100%">
+					</div>
+					<div poster>
+						<img src="images/t-rex poster.png" style="width:100%">
+					</div>
+					<div>
+						<img src="images/dimetrodon poster.png" style="width:100%">
+					</div>
+			</div>
+
+		<div class="environment-art-gallery-wrap separate-line"></div>
+		<div class="art-gallery-wrap">
 			
 			<img src="images/back_btn.png" id="backbtn">
 			
@@ -104,12 +157,6 @@
 		let backBtn = document.getElementById("backbtn");
 		let fwdBtn = document.getElementById("fwdbtn");
 	
-		scrollContainer.addEventListener("wheel",(evt) => {
-			evt.preventDefault();
-			scrollContainer.scrollLeft += evt.deltaY;
-			scrollContainer.style.scrollBehavior = "auto";
-		});
-	
 		fwdBtn.addEventListener("click",()=> {
 			scrollContainer.style.scrollBehavior = "smooth";
 			scrollContainer.scrollLeft += scrollContainer.clientWidth;
@@ -132,11 +179,10 @@
 	</script>
 
 	<div class="social-icons">
-		<a href="https://www.linkedin.com/in/lgund/" target="_blank" rel="noopener noreferrer">
-			<img src="linkedin-icon.png" alt="LinkedIn">
+		<a href="https://www.linkedin.com/in/lgund/" target="_blank"><i class="fa fa-linkedin-in"></i></a>
 		</a>
 		<a href="https://github.com/l-gund" target="_blank" rel="noopener noreferrer">
-			<img src="github-icon.png" alt="GitHub">
+			<i class="fa fa-github"></i>
 		</a>
 	</div>
 
